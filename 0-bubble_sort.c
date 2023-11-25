@@ -48,13 +48,8 @@ void bubble_sort(int *array, size_t size)
             if (k < size - 1)
                 printf(", ");
         }
-        printf("\n");
 
-        if (!swapped)
-        {
-            break;
-        }
+        if (swapped)
+            printf("\n");
     }
 }
-
-
