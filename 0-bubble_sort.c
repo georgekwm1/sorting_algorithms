@@ -26,30 +26,24 @@ void swap(int *a, int *b)
 
 void bubble_sort(int *array, size_t size)
 {
-    size_t i, j, k;
+    size_t i;
     bool swapped;
 
-    for (i = 0; i < size - 1; ++i)
-    {
-        swapped = false;
+    if (array == NULL || size < 2)
+		return;
 
-        for (j = 0; j < size - i - 1; ++j)
-        {
-            if (array[j] > array[j + 1])
-            {
-                swap(&array[j], &array[j + 1]);
-                swapped = true;
-            }
-        }
-
-        for (k = 0; k < size; ++k)
-        {
-            printf("%d", array[k]);
-            if (k < size - 1)
-                printf(", ");
-        }
-
-        if (swapped)
-            printf("\n");
-    }
+    while (swapped == false)
+	{
+		swapped = true;
+		for (i = 0; i < size - 1; i++)
+		{
+			if (array[i] > array[i + 1])
+			{
+				swap(array + i, array + i + 1);
+				print_array(array, size);
+				swapped = false;
+			}
+		}
+		size--;
+	}
 }
